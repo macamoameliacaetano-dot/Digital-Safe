@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIGITAL SAFE</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f5f3;
+    color: #173b32;
+}
+
+header {
+    background: #075b45;
+    color: white;
+    padding: 25px 20px;
+    border-radius: 0 0 25px 25px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+header p {
+    margin-top: 5px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 18px;
+    border-radius: 16px;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.balance {
+    background: #087653;
+    color: white;
+}
+
+.balance h1 {
+    font-size: 32px;
+}
+
+button {
+    background: #087653;
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+}
+
+.vault {
+    border-left: 5px solid #087653;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">DS 🔐</div>
+    <h2>DIGITAL SAFE</h2>
+    <p>Your Money, Your Future.</p>
+</header>
+
+<div class="container">
+
+    <div class="card balance">
+        <h3>Meu saldo demonstrativo</h3>
+        <h1>0,00 MT</h1>
+        <p>Saldo de demonstração</p>
+    </div>
+
+    <div class="card">
+        <h3>💰 Começar a poupar</h3>
+        <p>Depósito mínimo previsto: 50 MT</p>
+        <input type="number" placeholder="Valor em MT" disabled>
+        <button onclick="alert('Demonstração: pagamentos reais ainda não estão disponíveis.')">
+            Fazer depósito
+        </button>
+    </div>
+
+    <div class="card">
+        <h3>🔐 Os meus cofres</h3>
+        <p>Organiza os teus objetivos de poupança.</p>
+
+        <input type="text" id="nomeCofre"
+        placeholder="Nome do cofre">
+
+        <button onclick="criarCofre()">
+            Criar cofre
+        </button>
+
+        <div id="listaCofres"></div>
+    </div>
+
+    <div class="card">
+        <h3>📱 Métodos de pagamento</h3>
+        <p>M-Pesa</p>
+        <p>e-Mola</p>
+        <p>mKesh</p>
+        <small>Integrações ainda não disponíveis.</small>
+    </div>
+
+</div>
+
+<footer>
+    DIGITAL SAFE © 2026
+    <p>Your Money, Your Future.</p>
+    <small>Versão de demonstração</small>
+</footer>
+
+<script>
+function criarCofre() {
+    let nome = document.getElementById("nomeCofre").value;
+
+    if (nome.trim() === "") {
+        alert("Escreve o nome do teu cofre.");
+        return;
+    }
+
+    let cofre = document.createElement("div");
+    cofre.className = "card vault";
+    cofre.textContent = "🔒 " + nome;
+
+    document.getElementById("listaCofres").appendChild(cofre);
+
+    document.getElementById("nomeCofre").value = "";
+}
+</script>
+
+</body>
+  </html>
